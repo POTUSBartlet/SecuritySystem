@@ -13,10 +13,6 @@ cap = cv2.VideoCapture("source_videos/street.mp4")
 
 MODEL_NAME = 'faster_rcnn_inception'
 
-# Path to frozen detection graph. This is the actual model that is used for the object detection.
-# PATH_TO_CKPT = "C:/Users/PMac/Anaconda3/Lib/site-packages/tensorflow/models/research/" \
-# #                "object_detection/faster_rcnn_inception_resnet_v2_atrous_coco_2018_01_28/frozen_inference_graph.pb"
-
 PATH_TO_CKPT = "models/faster_rcnn_inception_resnet_v2_atrous_oid_v4_2018_12_12/frozen_inference_graph.pb"
 PATH_TO_CKPT_2 = "models/faster_rcnn_nas_coco_2018_01_28/frozen_inference_graph.pb"
 
