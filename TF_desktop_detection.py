@@ -10,13 +10,6 @@ from utils import visualization_utils as vis_util
 cap = cv2.VideoCapture("source_videos/Walking.mp4")
 
 
-
-#MODEL_NAME = 'faster_rcnn_inception'
-
-# Path to frozen detection graph. This is the actual model that is used for the object detection.
-# PATH_TO_CKPT = "C:/Users/PMac/Anaconda3/Lib/site-packages/tensorflow/models/research/" \
-#                "object_detection/faster_rcnn_inception_resnet_v2_atrous_coco_2018_01_28/frozen_inference_graph.pb"
-
 PATH_TO_CKPT = "models/faster_rcnn_nas_coco_2018_01_28/frozen_inference_graph.pb"
 
 # List of the strings that is used to add correct label for each box.
@@ -36,18 +29,9 @@ with detection_graph.as_default():
     tf.import_graph_def(od_graph_def, name='')
 
 
-
 label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
 categories = label_map_util.convert_label_map_to_categories(label_map, max_num_classes=NUM_CLASSES, use_display_name=True)
 category_index = label_map_util.create_category_index(categories)
-
-
-
-
-# def load_image_into_numpy_array(image):
-#   (im_width, im_height) = image.size
-#   return np.array(image.getdata()).reshape(
-#       (im_height, im_width, 3)).astype(np.uint8)
 
 
 # fourcc = cv2.VideoWriter_fourcc(*'XVID')
