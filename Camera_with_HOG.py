@@ -13,7 +13,7 @@ hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
 # Sets the video source to the default webcam
 # device:	id of the opened video capturing device (i.e. a camera index). If there is a single camera connected, just pass 0
-video_capture = cv2.VideoCapture('http://192.168.3.24:8081')
+video_capture = cv2.VideoCapture(0)
 
 
 # account_sid = '*'
