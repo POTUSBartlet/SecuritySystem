@@ -37,8 +37,8 @@ while True:
         faces = faceCascade.detectMultiScale(
             gray_frame,
             scaleFactor	= 1.05,
-            minNeighbors	= 10,
-            minSize			= (10, 10))
+            minNeighbors = 10,
+            minSize = (10, 10))
 
 
         # prediction = None
