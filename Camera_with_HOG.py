@@ -10,9 +10,6 @@ from imutils.object_detection import non_max_suppression
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
-
-# Sets the video source to the default webcam
-# device:	id of the opened video capturing device (i.e. a camera index). If there is a single camera connected, just pass 0
 video_capture = cv2.VideoCapture(0)
 
 
@@ -28,9 +25,9 @@ int_current_time = int(current_time.strftime('%H'))
 count = 0
 
 while True:
-    if not video_capture.isOpened():  # If the previous call to VideoCapture constructor or VideoCapture::open succeeded, the method returns true
+    if not video_capture.isOpened():  
         print('Unable to load camera.')
-        sleep(5)  # Suspend the execution for 5 seconds
+        sleep(5) 
     else:
         sleep(.01)
         ret, frame = video_capture.read()  # Grabs, decodes and returns the next video frame (Capture frame-by-frame)
@@ -71,7 +68,6 @@ while True:
         #     cv2.rectangle(gray_frame, (xA, yA), (xB, yB), (0, 255, 0), 2)
 
 
-        # Display the resulting frame
         frame = cv2.resize(frame, (900, 500))
         cv2.imshow('Video', frame)
 
