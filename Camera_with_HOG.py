@@ -22,18 +22,10 @@ video_capture = cv2.VideoCapture('http://192.168.3.24:8081')
 # client = Client(account_sid, auth_token)
 
 current_time = datetime.datetime.now()
-str_current_time = current_time.strftime('%H')
-int_curr_time = int(str_current_time)
-print(int_curr_time)
-
-start_time = 14
-end_time = 20
-print("start" + str(start_time))
-print("end" + str(end_time))
+int_current_time = int(current_time.strftime('%H'))
+#print(int_curr_time)
 
 count = 0
-
-
 
 while True:
     if not video_capture.isOpened():  # If the previous call to VideoCapture constructor or VideoCapture::open succeeded, the method returns true
