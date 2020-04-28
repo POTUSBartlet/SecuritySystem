@@ -6,7 +6,7 @@ cascPath = 'haarcascade_upperbody.xml'
 
 faceCascade = cv2.CascadeClassifier(cascPath)
 
-video_capture = cv2.VideoCapture('http://192.168.3.24:8081')
+video_capture = cv2.VideoCapture(0)
 
 current_time = datetime.datetime.now()
 str_current_time = current_time.strftime('%H')
