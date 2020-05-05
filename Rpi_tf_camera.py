@@ -60,14 +60,16 @@ with detection_graph.as_default():
       boxes = np.squeeze(boxes)
       scores = np.squeeze(scores)
       classes = np.squeeze(classes)
-
-      if scores[0] > .7:
-          client.messages.create(
-              to="*",
-              from_="*",
-              body="Person Spotted"
-          )
-          sleep(2)
+      
+      # Alerts if person spotted
+      for i, j in zip(scores, classes):
+          if i > .6 and j ==1:
+             client.messages.create(
+                to="*",
+                from_="*",
+                body="Person Spotted"
+              )
+              sleep(2)
 
 
       # Visualization of the results of a detection.
