@@ -32,14 +32,7 @@ while True:
         sleep(.01)
         ret, frame = video_capture.read()  # Grabs, decodes and returns the next video frame (Capture frame-by-frame)
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)  # Conversion of the image to the grayscale
-
-
-
-        # Detects objects of different sizes in the input image. The detected objects are returned as a list of rectangles
-        # image:		Matrix of the type CV_8U containing an image where objects are detected
-        # scaleFactor:	Parameter specifying how much the image size is reduced at each image scale
-        # minNeighbors:	Parameter specifying how many neighbors each candidate rectangle should have to retain it
-        # minSize:		Minimum possible object size. Objects smaller than that are ignored
+        
 
         boxes, weights = hog.detectMultiScale(gray_frame, winStride=(8, 8), padding=(12,12), scale=1.095)
 
@@ -47,9 +40,7 @@ while True:
         for (x, y, w, h) in boxes:
             ROI_gray = gray_frame[y: y +h, x: x +w] # Extraction of the region of interest (face) from the frame
             cv2.rectangle(frame, (x, y), ( x +w, y+ h), (0, 0, 255), 2)
-
-            # print("box drawn")
-
+            
 
             if int_curr_time <= 23:
                 print("message trigger")
